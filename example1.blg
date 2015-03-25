@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: example1.aux
+The style file: plplain.bst
+Database file #1: biblioex.bib
+Warning--entry type for "PN-ISO_690-2:1999" isn't style-file defined
+--line 151 of file biblioex.bib
+You've used 11 entries,
+            2129 wiz_defined-function locations,
+            573 strings with 6664 characters,
+and the built_in function-call counts, 2870 in all, are:
+= -- 283
+> -- 121
+< -- 2
++ -- 49
+- -- 38
+* -- 146
+:= -- 476
+add.period$ -- 35
+call.type$ -- 11
+change.case$ -- 52
+chr.to.int$ -- 0
+cite$ -- 11
+duplicate$ -- 109
+empty$ -- 253
+format.name$ -- 38
+if$ -- 623
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 7
+newline$ -- 58
+num.names$ -- 20
+pop$ -- 78
+preamble$ -- 1
+purify$ -- 42
+quote$ -- 0
+skip$ -- 101
+stack$ -- 0
+substring$ -- 87
+swap$ -- 22
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 40
+warning$ -- 0
+while$ -- 23
+width$ -- 13
+write$ -- 118
+(There was 1 warning)

@@ -1,0 +1,112 @@
+\documentclass[magister,druk,ramka,polski]{dyplom}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+%%
+\usepackage[toc]{appendix}
+\renewcommand{\appendixtocname}{Dodatki}
+\renewcommand{\appendixpagename}{Dodatki}
+%%
+\usepackage{listings}
+
+%\noappendicestocpagenum
+\usepackage{lipsum}
+\usepackage{url}
+%\usepackage{showframe}
+
+
+\author{Jan A. Backi}
+\title{Analiza danych HPLC}
+\titlen{HPLC data analysis}
+\promotor{dr hab. inż. Jerzy Babacki, prof. nadzw. PWr., I-77}
+\wydzial{Wydział Chemiczny}
+\kierunek{Inżynieria Chemiczna i Procesowa}
+\specjalnosc{Projektowanie Procesów Chemicznych}
+\kluczowe{raz, dwa trzy}
+\streszczenie{\lipsum}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+%Ala ma kota
+
+\input{readme}
+
+
+\chapter{Ala ma kota}
+
+ĄĆĘŁŃÓŚŹŻ
+
+ąćęłńóśźż
+
+\lipsum[1]
+
+\section{Ola ma psa}
+
+\lipsum[2-3]
+
+\section{Zosia ma kosia}
+
+\lipsum[7]
+
+\subsection{Ula ma małpę}
+
+\lipsum[4-10]
+
+\begin{figure}
+\includegraphics[width=.4\textwidth]{kotek}
+\caption{Ala ma kota}
+\end{figure}
+
+\lipsum[11-15]
+
+\begin{table}
+\caption{Co kto ma \cite{harel_rzecz_2008} (patrz też dodatek~\ref{Dod1})}
+\begin{tabular}{|l|l|l|}
+\hline
+Ala & ma & kota \\
+\hline
+Ola & ma & psa \\
+\hline
+Ula & ma & małpę\\
+\hline
+\end{tabular}
+\end{table}
+
+\lipsum[16-20]
+
+\begin{equation}
+\sum_{i=1}^{\infty}a_i
+\end{equation}
+
+\chapter{Listingi}
+
+\begin{lstlisting}
+int main()
+{
+   int a=2*3;
+   printf("**Ala ma kota\n**");
+   while(!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_MODE_SELECT)); /* EV5 */
+   return 0;
+}
+\end{lstlisting}
+
+
+\appendixpage
+\appendix
+%\addappheadtotoc
+
+\chapter{To powinien być dodatek}\label{Dod1}
+
+\lipsum[9-11]
+
+\nocite{*}
+\bibliography{biblioex}
+\bibliographystyle{dyplom}
+
+\end{document}

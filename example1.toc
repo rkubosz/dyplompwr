@@ -1,0 +1,6 @@
+\contentsline {chapter}{Spis rysunk\'ow}{2}
+\contentsline {chapter}{Spis tabel}{3}
+\contentsline {chapter}{\numberline {1\relax .\kern .5em }Ala ma kota}{4}
+\contentsline {section}{\numberline {1.1\relax .\kern .5em }Ola ma psa}{4}
+\contentsline {subsection}{\numberline {1.1.1\relax .\kern .5em }Ula ma ma\IeC {\l }p\IeC {\k e}}{4}
+\contentsline {chapter}{Bibliografia}{8}
