@@ -1,0 +1,10 @@
+*
+!*/
+!*.md
+!.gitignore
+!*.cls
+!*.tex
+!*.eps
+!*.pdf
+!*.bib
+!*.sty
