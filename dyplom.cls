@@ -31,12 +31,13 @@
 %%        Opcje dla druku
 %%=============================================================================
 %ustawienie marginesów
-\RequirePackage[a4paper,left=35mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+
 
 \if@archiwum
 % Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt i openany
 % oraz doublesided
-\LoadClass[12pt,openany,doublesided]{mwrep}
+\LoadClass[12pt,openany,twoside]{mwrep}
+\RequirePackage[a4paper,outer=2.5cm,inner=3.5cm,right=2.5cm,bottom=2.5cm]{geometry}
 % Interlinia jest ustawiana na 1		
 \linespread{1}
 \fi
@@ -44,6 +45,7 @@
 \if@druk
 % Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt
 \LoadClass[12pt]{mwrep}
+\RequirePackage[a4paper,top=2.5cm,left=3.5cm,right=2.5cm,bottom=2.5cm]{geometry}
 % Zmieniamy interlinię na 1.5 dla poprawienia przejrzystości
 \linespread{1.5}
 \fi
@@ -76,6 +78,9 @@
 %\usepackage[OT4]{polski}
 \usepackage{polyglossia}
 \setdefaultlanguage{polish}
+\def\xd{Promotor: }
+\def\pracadyplomowa{PRACA DYPLOMOWA}
+\def\logo{pwrlogo/pl.pdf}
 \fi
 
 \if@eng
@@ -83,6 +88,9 @@
 \usepackage{polyglossia}
 \setdefaultlanguage{english}
 \setotherlanguages{polish}
+\def\xd{Supervisor: }
+\def\pracadyplomowa{MASTER THESIS}
+\def\logo{pwrlogo/en.pdf}
 \fi
 %%=============================================================================
 %%		Strona tytułowa
@@ -113,27 +121,33 @@
 	\pagenumbering{alph}
 	\noindent\unitlength1mm
 	\begin{picture}(0,0)
-	\put(0,-25){\includegraphics[width=128mm]{pwrlogo/pl1.eps}}
+	\put(0,-25){\includegraphics[width=128mm]{\logo}}
 	
-	\put(60,-30){\makebox(0,0)[cb]{\fontsize{16pt}{18pt}{\fontwydzial \@wydzial}}}
-	%\put(64,-30){\makebox(0,0)[cb]{\fontsize{16pt}{18pt}\@wydzial}}
-	
+	\if@pl
+	    \put(60,-30){\makebox(0,0)[cb]{\fontsize{16pt}{18pt}{\fontwydzial \@wydzial}}}
+	\fi
+	\if@eng
+		    \put(50,-30){\makebox(0,0)[cb]{\fontsize{14pt}{16pt}{\fontwydzial \@wydzial}}}
+    \fi
+    
 	\definecolor{jasnoszary}{rgb}{.74 .74 .74}
 	\textcolor{jasnoszary}{
-	    \put(0,-186){\rule{128mm}{4mm}}\put(0,-186){\rule{4mm}{80mm}}
-	    \put(0,-110){\rule{128mm}{4mm}}\put(128,-186){\rule{4mm}{80mm}}
+	    \put(0,-166){\rule{128mm}{4mm}}\put(0,-166){\rule{4mm}{80mm}}
+	    \put(0,-90){\rule{128mm}{4mm}}\put(128,-166){\rule{4mm}{80mm}}
 	}
 	
-	\put(64,-95){\makebox(0,0)[cb]{\fontsize{32pt}{34pt}\usefont{T1}{ugm}{m}{n} \textbf{PRACA          
-	    DYPLOMOWA}}}
+	\put(64,-75){\makebox(0,0)[cb]{\fontsize{32pt}{34pt}\usefont{T1}{ugm}{m}{n} \textbf{\pracadyplomowa}}}
 	
-	\put(64,-115){\makebox(0,0)[t]{\parbox{115mm}{\centering\fontsize{16pt}{18pt}\usefont{T1}{ugm}{m}{n}\@title \\ \@titlen}}}
+	\put(64,-95){\makebox(0,0)[t]{\parbox{115mm}{\centering\fontsize{16pt}{18pt}\usefont{T1}{ugm}{m}{n}\@title \\ \@titlen}}}
 	
-	\put(64,-175){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n}\@author}}
+	\put(64,-145){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n}\@author}}
 	
-	\put(128,-197){\makebox(0,0)[tr]{\parbox{115mm}{\fontsize{12pt}{14pt}\usefont{T1}{ugm}{m}{n}\raggedleft \@kluczowe}}}
+    \put(64,-155){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n} {\xd \@promotor}}}	
 	
-	\put(0,-220){\makebox(0,0)[tl]{\parbox{115mm}{\fontsize{10pt}{12pt}\usefont{T1}{ugm}{m}{n}\raggedright \@streszczenie}}}
+	
+	\put(128,-175){\makebox(0,0)[tr]{\parbox{115mm}{\fontsize{12pt}{14pt}\usefont{T1}{ugm}{m}{n}\raggedleft \@kluczowe}}}
+	
+	\put(0,-200){\makebox(0,0)[tl]{\parbox{115mm}{\fontsize{10pt}{12pt}\usefont{T1}{ugm}{m}{n}\raggedright \@streszczenie}}}
 	\end{picture}
 	
 	\let\footnotesize\small
