@@ -1,5 +1,6 @@
 \NeedsTeXFormat{LaTeX2e} % dla pełnej jasności
 \ProvidesClass{dyplom} % jedyny niezbędny element klasy :-)
+\RequirePackage{ifluatex}
 %% Opcje
 % magister – strona tytułowa magisterska
 % inzynier – strona tytułowa inzynierska
@@ -9,22 +10,20 @@
 \newif\if@druk
 \newif\if@inzynier
 \newif\if@magister
-\newif\if@ramka
 \newif\if@eng
 \newif\if@pl
+
 \@inzyniertrue
 \@archiwumtrue
-\@ramkatrue
 \@engfalse
 \DeclareOption{archiwum}{\@archiwumtrue\@drukfalse}
 \DeclareOption{druk}{\@druktrue\@archiwumfalse}
 \DeclareOption{inzynier}{\@inzyniertrue\@magisterfalse}
 \DeclareOption{magister}{\@magistertrue\@inzynierfalse}
-\DeclareOption{ramka}{\@ramkatrue}
 \DeclareOption{english}{\@engtrue\@plfalse}
 \DeclareOption{polski}{\@pltrue\@engfalse}
 % Wszystkie opcje mają być przekazywane do klasy mwrep
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{mwrep}} 
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{mwrep}}
 \ProcessOptions
 
 %%=============================================================================
@@ -50,62 +49,70 @@
 \linespread{1.5}
 \fi
 
-%\RequirePackage[OT4]{fontenc}      	% odpowiednik \usepackage
-%\RequirePackage[utf8]{inputenc} 		% to właściwie powinno być na zewnątrz
-
 %%=============================================================================
 %%      Wymagane pakiety
 %%=============================================================================
-\RequirePackage{fontspec}               % dla lualatex
 \RequirePackage{array,graphicx}
+\RequirePackage[ddmmyyyy]{datetime}
 \RequirePackage[toc]{appendix}
 \RequirePackage[absolute]{textpos}	    % to na potrzeby strony tytułowej
 \RequirePackage{xcolor} 				% na potrzeby strony tytułowej
 \def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
-
 
 %\RequirePackage{tgtermes}
 
 %%=============================================================================
 %%		Opcje językowe
 %%=============================================================================
-% Pakiet babel wyłączony na potrzeby lualatex, który używa polyglossia.
-
 \if@pl
-\renewcommand{\appendixtocname}{Dodatki}
-\renewcommand{\appendixpagename}{Dodatki}
-%\usepackage[polish]{babel}
-%\usepackage[OT4]{polski}
-\usepackage{polyglossia}
-\setdefaultlanguage{polish}
-\def\xd{Promotor: }
-\def\pracadyplomowa{PRACA DYPLOMOWA}
-\def\logo{pwrlogo/pl.pdf}
+    \def\xd{Promotor: }
+    \if@magister
+        \def\pracadyplomowa{PRACA DYPLOMOWA}
+    \fi
+    \if@inzynier
+        \def\pracadyplomowa{PRACA INŻYNIERSKA}
+    \fi
+    \def\logo{pwrlogo/pl.pdf}
 \fi
 
 \if@eng
-%\usepackage[main=english,polish]{babel}
-\usepackage{polyglossia}
-\setdefaultlanguage{english}
-\setotherlanguages{polish}
-\def\xd{Supervisor: }
-\def\pracadyplomowa{MASTER THESIS}
-\def\logo{pwrlogo/en.pdf}
+    \def\xd{Supervisor: }
+    \if@magister
+        \def\pracadyplomowa{MASTER THESIS}    
+    \fi
+    \if@inzynier
+        \def\pracadyplomowa{ENGINEER'S THESIS}
+    \fi
+    \def\logo{pwrlogo/en.pdf}
+\fi
+
+\ifluatex
+    \RequirePackage{polyglossia}
+    %\usepackage[utf8]{luainputenc}
+    \if@pl
+        \setdefaultlanguage{polish}
+    \fi
+    \if@eng
+        \setdefaultlanguage{english}
+        \setotherlanguages{polish}
+    \fi
+\else
+    \RequirePackage[T1]{fontenc}
+    \RequirePackage[utf8]{inputenc}
+    \if@pl
+        \RequirePackage[polish]{babel}    
+    \fi
+    \if@eng
+        \usepackage[main=english,polish]{babel}
+    \fi
 \fi
 %%=============================================================================
 %%		Strona tytułowa
 %%=============================================================================
 \def\promotor#1{\gdef\@promotor{#1}}
+\def\miejscowosc#1{\gdef\@miejscowosc{#1}}
 \def\@promotor{\@latex@error{No \noexpand\promotor given}\@ehc}
-\def\konsultant#1{\gdef\@konsultant{#1}}
-%% Zakładam, że konsultanci nie będą występowali zbyt często.
-%% Na kartę trafią tylko wtedy gdy będą...
 \def\wydzial#1{\gdef\@wydzial{#1}}
-\def\@wydzial{Wydział Chemiczny}
-\def\kierunek#1{\gdef\@kierunek{#1}}
-\gdef\@kierunek{@latex@error{No \noexpand\kierunek given}\@ehc}
-\def\specjalnosc#1{\gdef\@specjalnosc{#1}}
-\gdef\@specjalnosc{\@latex@warning@no@line{No \noexpand\specjalnosc given}}
 \def\kluczowe#1{\gdef\@kluczowe{#1}}
 \def\@kluczowe{\@latex@error{No \noexpand\kluczowe given}\@ehc}
 \def\streszczenie#1{\gdef\@streszczenie{#1}}
@@ -113,47 +120,50 @@
 \def\titlen#1{\gdef\@titlen{#1}}
 \def\@titlen{\@latex@error{No \noexpand\titlen given}\@ehc}
 
-% Czcionka Zapf użyta do nazwy wydziału
-\newfontfamily\fontwydzial{ZapfHumnst BT}
 \renewcommand\maketitle{
     \begin{titlepage}
 	\newgeometry{left=62.5mm,right=25mm,top=25mm,bottom=25mm}
 	\pagenumbering{alph}
 	\noindent\unitlength1mm
 	\begin{picture}(0,0)
-	\put(0,-25){\includegraphics[width=128mm]{\logo}}
+	\put(0,-25){\includegraphics[width=122mm]{\logo}}
 	
 	\if@pl
-	    \put(60,-30){\makebox(0,0)[cb]{\fontsize{16pt}{18pt}{\fontwydzial \@wydzial}}}
+	    \put(60,-30){\makebox(0,0)[cb]{\fontsize{16pt}{18pt}\usefont{T1}{uop}{m}{n}{\@wydzial}}}
 	\fi
 	\if@eng
-		    \put(50,-30){\makebox(0,0)[cb]{\fontsize{14pt}{16pt}{\fontwydzial \@wydzial}}}
+        \put(50,-30){\makebox(0,0)[cb]{\fontsize{14pt}{16pt}
+            {\usefont{T1}{ugm}{m}{n} \@wydzial}}}
     \fi
     
 	\definecolor{jasnoszary}{rgb}{.74 .74 .74}
 	\textcolor{jasnoszary}{
-	    \put(0,-166){\rule{128mm}{4mm}}\put(0,-166){\rule{4mm}{80mm}}
-	    \put(0,-90){\rule{128mm}{4mm}}\put(128,-166){\rule{4mm}{80mm}}
+	    \put(0,-166){\rule{118mm}{4mm}}\put(0,-166){\rule{4mm}{80mm}}
+	    \put(0,-90){\rule{118mm}{4mm}}\put(118,-166){\rule{4mm}{80mm}}
 	}
 	
-	\put(64,-75){\makebox(0,0)[cb]{\fontsize{32pt}{34pt}\usefont{T1}{ugm}{m}{n} \textbf{\pracadyplomowa}}}
+	\put(61,-75){\makebox(0,0)[cb]{\fontsize{32pt}{34pt}\usefont{T1}{ugm}{m}{n} {\pracadyplomowa}}}
 	
-	\put(64,-95){\makebox(0,0)[t]{\parbox{115mm}{\centering\fontsize{16pt}{18pt}\usefont{T1}{ugm}{m}{n}\@title \\ \@titlen}}}
+	\put(61,-95){\makebox(0,0)[t]{\parbox{115mm}{\centering\fontsize{16pt}{18pt}\usefont{T1}{ugm}{m}{n}\@title \\ \@titlen}}}
 	
-	\put(64,-145){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n}\@author}}
+	\put(61,-145){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n}\@author}}
 	
-    \put(64,-155){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n} {\xd \@promotor}}}	
+    \put(61,-155){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n} {\xd \@promotor}}}	
 	
 	
-	\put(128,-175){\makebox(0,0)[tr]{\parbox{115mm}{\fontsize{12pt}{14pt}\usefont{T1}{ugm}{m}{n}\raggedleft \@kluczowe}}}
+	\put(122,-175){\makebox(0,0)[tr]{\parbox{115mm}{\fontsize{12pt}{14pt}\usefont{T1}{ugm}{m}{n}\raggedleft \@kluczowe}}}
 	
 	\put(0,-200){\makebox(0,0)[tl]{\parbox{115mm}{\fontsize{10pt}{12pt}\usefont{T1}{ugm}{m}{n}\raggedright \@streszczenie}}}
+	
+	\put(61,-250){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n}
+	{\@miejscowosc \quad \the\year}}}
 	\end{picture}
 	
 	\let\footnotesize\small
 	\let\footnoterule\relax
 	\let \footnote \thanks
 	\mbox{}
+	\cleardoublepage
 \end{titlepage}
 
 

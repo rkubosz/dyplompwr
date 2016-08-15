@@ -1,38 +1,38 @@
-\documentclass[magister,archiwum,ramka,english]{dyplom}
-\usepackage[utf8]{inputenc}
+\documentclass[magister,druk,polski]{dyplom}
 \usepackage{hyperref}
-%%
+
 \usepackage[toc]{appendix}
 \renewcommand{\appendixtocname}{Dodatki}
 \renewcommand{\appendixpagename}{Dodatki}
-%%
-\usepackage{listings}
 
-%\noappendicestocpagenum
+
+\usepackage{listings}
+\noappendicestocpagenum
 \usepackage{lipsum}
 \usepackage{url}
-%\usepackage{showframe}
 
 
-\author{Imię i nazwisko autora}
-\title{Tytuł polski.}
+\author{Imię i nazwisko autora.}
+\title{Tytuł  polski.}
 \titlen{English title.}
 \promotor{dr hab. inż. Pan Promotor}
-\wydzial{Faculty of Chemistry}
-\kierunek{Inżynieria Chemiczna i Procesowa}
-\specjalnosc{Projektowanie Procesów Chemicznych}
-\kluczowe{raz, dwa trzy}
-\streszczenie{\lipsum[1]}
+\wydzial{Wydział Chemiczny}
+\miejscowosc{Wrocław}
+\kluczowe{słowa kluczowe, raz, dwa, trzy}
+\streszczenie{Kilka słów o pracy zwane też streszczeniem}
 \begin{document}
 
+
+
+
+
 \maketitle
+\input{readme}
 \tableofcontents
 \listoffigures
 \listoftables
 
 %Ala ma kota
-
-\input{readme}
 
 
 \chapter{Ala ma kota}
