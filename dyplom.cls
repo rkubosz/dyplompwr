@@ -1,6 +1,5 @@
 \NeedsTeXFormat{LaTeX2e} % dla pełnej jasności
 \ProvidesClass{dyplom} % jedyny niezbędny element klasy :-)
-\RequirePackage{ifluatex}
 %% Opcje
 % magister – strona tytułowa magisterska
 % inzynier – strona tytułowa inzynierska
@@ -29,9 +28,6 @@
 %%=============================================================================
 %%        Opcje dla druku
 %%=============================================================================
-%ustawienie marginesów
-
-
 \if@archiwum
 % Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt i openany
 % oraz doublesided
@@ -85,27 +81,6 @@
     \fi
     \def\logo{pwrlogo/en.pdf}
 \fi
-
-\ifluatex
-    \RequirePackage{polyglossia}
-    %\usepackage[utf8]{luainputenc}
-    \if@pl
-        \setdefaultlanguage{polish}
-    \fi
-    \if@eng
-        \setdefaultlanguage{english}
-        \setotherlanguages{polish}
-    \fi
-\else
-    \RequirePackage[T1]{fontenc}
-    \RequirePackage[utf8]{inputenc}
-    \if@pl
-        \RequirePackage[polish]{babel}    
-    \fi
-    \if@eng
-        \usepackage[main=english,polish]{babel}
-    \fi
-\fi
 %%=============================================================================
 %%		Strona tytułowa
 %%=============================================================================
@@ -129,11 +104,14 @@
 	\put(0,-25){\includegraphics[width=122mm]{\logo}}
 	
 	\if@pl
-	    \put(60,-30){\makebox(0,0)[cb]{\fontsize{16pt}{18pt}\usefont{T1}{uop}{m}{n}{\@wydzial}}}
+	    \put(60,-30){
+	        \makebox(0,0)[cb]{
+	            \fontsize{16pt}{18pt}\usefont{T1}{uop}{m}{n}{\@wydzial}}}
 	\fi
 	\if@eng
-        \put(50,-30){\makebox(0,0)[cb]{\fontsize{14pt}{16pt}
-            {\usefont{T1}{ugm}{m}{n} \@wydzial}}}
+        \put(50,-30){
+            \makebox(0,0)[cb]{
+                \fontsize{14pt}{16pt}{\usefont{T1}{uop}{m}{n} \@wydzial}}}
     \fi
     
 	\definecolor{jasnoszary}{rgb}{.74 .74 .74}

@@ -1,79 +1,65 @@
-\documentclass[12pt,openany,doublesided]{mwrep}
-\usepackage[OT4]{polski}
-
+\documentclass[magister,druk,polski]{dyplom}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
-\usepackage{xcolor}
-\usepackage[absolute]{textpos}
-\usepackage{graphicx}
-%\definecolor{jasnoszary}{rgb}{.74 .74 .74}
-\usepackage{pwrdtyt}
-
-
-
-\usepackage{lipsum}
+\usepackage{mathtools, amsmath, amsfonts, amssymb}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand{\vecfun}[1]{\textsc{#1}}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{csquotes}
+\usepackage[natbib=true,
+    style=numeric,
+    citestyle=numeric,
+    backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+\usepackage{booktabs, tabularx, tabulary}
+\usepackage[separate-uncertainty=true]{siunitx}
+\usepackage{rotating}
+\usepackage[draft]{microtype}
+\usepackage[hypcap]{caption}
+\usepackage[list,hypcap]{subcaption}
+\usepackage{tikz, pgfplots}
+\usepackage{pgfplotstable}
+\usetikzlibrary{shapes,arrows,positioning,matrix}
+\usepackage{tikzscale}
+\usepgfplotslibrary{groupplots}
+\usepackage{placeins}
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily\scriptsize\linespread{1},
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
+    language=Python,
+    morecomment=[is]{"""}{"""}
+}
+\usepackage{algorithmic,algorithm}
+\usepackage{syntonly}
+%\syntaxonly
+\captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
+    \renewcommand\thesubfigure{(\alph{subfigure})}
 
-\author{Arkadiusz Kupczyński}
-\title{Wpływ proszków żelaza karbonylkowego i~Terfenolu-D na właściwości magnetomechaniczne kompozytu na bazie żywicy epoksydowej}
-\promotor{dr hab. inż. Jerzy Kaleta, prof. nadzw. PWr. dr inż. Daniel Lewandowski}
-\wydzial{Wydział Chemiczny}
-\kluczowe{słowo0, słowo1, słowo2, słowo3, słowo4,\ldots}
-\streszczenie{Krótka praca o niczym}
-
-
+%Metadata
+\author{Robert Kubosz}
+\title{Numeryczna analiza danych HPLC.}
+\titlen{Numerical analysis of HPLC data.}
+\promotor{dr inż. Łukasz Radosiński}
+\wydzial{Faculty of Chemistry}
+\miejscowosc{Wrocław}
+\kluczowe{optimization, HPLC, deconvolution, chromatography, signal
+    processing, data analysis, linear regression}
+\streszczenie{
+A method for analysis of chromatograms is introduced. The method is based on
+previously presented solutions and ideas. The method presented in this paper
+separates complex chromatogram into single peaks and provides statistical tools
+to choose and rate the best set of peaks. The method is examined on artificial
+and real chromatograms. The obtained results are adequate and indicate good
+performance of presented method.
+}
 \begin{document}
 
 \maketitle
-
-\tableofcontents
-
-\listoffigures
-
-\listoftables
-
-%Ala ma kota
-
-\chapter{Ala ma kota}
-
-\lipsum[1]
-
-\section{Ola ma psa}
-
-\lipsum[2-3]
-
-\subsection{Ula ma małpę}
-
-\lipsum[4-10]
-
-\begin{figure}
-\includegraphics[width=.4\textwidth]{kotek}
-\caption{Ala ma kota}
-\end{figure}
-
-\lipsum[11-15]
-
-\begin{table}
-\caption{Co kto ma \cite{harel_rzecz_2008}}
-\begin{tabular}{|l|l|l|}
-\hline
-Ala & ma & kota \\
-\hline
-Ola & ma & psa \\
-\hline
-Ula & ma & małpę\\
-\hline
-\end{tabular}
-\end{table}
-
-\lipsum[16-20]
-
-\begin{equation}
-\sum_{i=1}^{\infty}a_i
-\end{equation}
-
-\nocite{*}
-\bibliography{biblioex}
-\bibliographystyle{plplain}
 
 \end{document}
