@@ -12,9 +12,9 @@
 \newif\if@eng
 \newif\if@pl
 
-\@inzyniertrue
+\@magistertrue
 \@archiwumtrue
-\@engfalse
+\@pltrue
 \DeclareOption{archiwum}{\@archiwumtrue\@drukfalse}
 \DeclareOption{druk}{\@druktrue\@archiwumfalse}
 \DeclareOption{inzynier}{\@inzyniertrue\@magisterfalse}
@@ -29,20 +29,20 @@
 %%        Opcje dla druku
 %%=============================================================================
 \if@archiwum
-% Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt i openany
-% oraz doublesided
-\LoadClass[12pt,openany,twoside]{mwrep}
-\RequirePackage[a4paper,outer=2.5cm,inner=3.5cm,right=2.5cm,bottom=2.5cm]{geometry}
-% Interlinia jest ustawiana na 1		
-\linespread{1}
+    % Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt i openany
+    % oraz doublesided
+    \LoadClass[12pt,openany,twoside]{mwrep}
+    \RequirePackage[a4paper,outer=2cm,inner=3.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+    % Interlinia jest ustawiana na 1		
+    \RequirePackage[singlespacing]{setspace}
 \fi
 
 \if@druk
-% Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt
-\LoadClass[12pt]{mwrep}
-\RequirePackage[a4paper,top=2.5cm,left=3.5cm,right=2.5cm,bottom=2.5cm]{geometry}
-% Zmieniamy interlinię na 1.5 dla poprawienia przejrzystości
-\linespread{1.5}
+    % Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt
+    \LoadClass[12pt]{mwrep}
+    \RequirePackage[a4paper,top=2.5cm,left=3.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+    % Zmieniamy interlinię na 1.5 dla poprawienia przejrzystości
+    \RequirePackage[onehalfspacing]{setspace}
 \fi
 
 %%=============================================================================
@@ -50,15 +50,13 @@
 %%=============================================================================
 \RequirePackage{array,graphicx}
 \RequirePackage[ddmmyyyy]{datetime}
-\RequirePackage[toc]{appendix}
+\RequirePackage{lmodern}                % standardowy font, ładowany dla pewności
 \RequirePackage[absolute]{textpos}	    % to na potrzeby strony tytułowej
 \RequirePackage{xcolor} 				% na potrzeby strony tytułowej
 \def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
 
-%\RequirePackage{tgtermes}
-
 %%=============================================================================
-%%		Opcje językowe
+%%		Opcje językowe na potrzeby strony tytułowej
 %%=============================================================================
 \if@pl
     \def\xd{Promotor: }
@@ -86,6 +84,7 @@
 %%=============================================================================
 \def\promotor#1{\gdef\@promotor{#1}}
 \def\miejscowosc#1{\gdef\@miejscowosc{#1}}
+\def\dedykacja#1{\gdef\@dedykacja{#1}}
 \def\@promotor{\@latex@error{No \noexpand\promotor given}\@ehc}
 \def\wydzial#1{\gdef\@wydzial{#1}}
 \def\kluczowe#1{\gdef\@kluczowe{#1}}
@@ -122,19 +121,16 @@
 	
 	\put(61,-75){\makebox(0,0)[cb]{\fontsize{32pt}{34pt}\usefont{T1}{ugm}{m}{n} {\pracadyplomowa}}}
 	
-	\put(61,-95){\makebox(0,0)[t]{\parbox{115mm}{\centering\fontsize{16pt}{18pt}\usefont{T1}{ugm}{m}{n}\@title \\ \@titlen}}}
+	\put(61,-95){\makebox(0,0)[t]{\parbox{115mm}{\onehalfspacing\centering\fontsize{16pt}{18pt}\usefont{T1}{ugm}{m}{n}  \@title \\ \@titlen}}}
 	
-	\put(61,-145){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n}\@author}}
+	\put(61,-145){\makebox(0,0)[t]{\parbox{115mm}{\onehalfspacing\centering\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n}\@author \\ \xd\@promotor}}}
+		
+	\put(122,-175){\makebox(0,0)[tr]{\parbox{115mm}{\onehalfspacing\fontsize{12pt}{14pt}\usefont{T1}{ugm}{m}{n}\raggedleft  \@kluczowe}}}
 	
-    \put(61,-155){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n} {\xd \@promotor}}}	
-	
-	
-	\put(122,-175){\makebox(0,0)[tr]{\parbox{115mm}{\fontsize{12pt}{14pt}\usefont{T1}{ugm}{m}{n}\raggedleft \@kluczowe}}}
-	
-	\put(0,-200){\makebox(0,0)[tl]{\parbox{115mm}{\fontsize{10pt}{12pt}\usefont{T1}{ugm}{m}{n}\raggedright \@streszczenie}}}
+	\put(0,-200){\makebox(0,0)[tl]{\parbox{115mm}{\onehalfspacing\fontsize{10pt}{12pt}\usefont{T1}{ugm}{m}{n}\raggedright  \@streszczenie}}}
 	
 	\put(61,-250){\makebox(0,0){\fontsize{14pt}{16pt}\usefont{T1}{ugm}{m}{n}
-	{\@miejscowosc \quad \the\year}}}
+	{\@miejscowosc \  \the\year}}}
 	\end{picture}
 	
 	\let\footnotesize\small
@@ -157,7 +153,7 @@
   \global\let\@wydzial\@empty
   \global\let\@streszczenie\@empty
   \global\let\@kluczowe\@empty
-  \global\let\@prommotor\@empty
+  \global\let\@promotor\@empty
   \global\let\title\relax
   \global\let\titlen\relax
   \global\let\author\relax
