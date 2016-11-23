@@ -37,7 +37,7 @@ Strona tytułowa wymaga podania takich metadanych, jak nazwisko autora, tytuł
 pracy, tytuł i nazwisko promotora etc. W tym celu należy je podać w dalszych
 liniach pliku:
 ```latex
-\documentclass[magister,druk,polski]{dyplom}
+\documentclass[magister,druk,polski]{dyplompwr}
 \author{imię i nazwisko autora pracy}
 \title{tytuł polski}
 \titlen{tytuł angielski}
@@ -74,4 +74,8 @@ https://www.tug.org/fonts/getnonfreefonts/.
 Pakiet stworzyłem na podstawie wcześniej stworzonych pakietów autorstwa
 [dra Andrzeja Giniewicza](https://github.com/aginiewicz/pwrmgr) oraz [dra
 Wojciecha Myszki](https://kmim.wm.pwr.edu.pl/myszka/projekty/klasa-do-skladu-pracy-dyplomowej-magisterskiej-i-inzynierskiej-na-wydziale-mechanicznym-politechniki-wroclawskiej/).
+
+## Licencja
+
+Pakiet jest na licencji MIT.
 
