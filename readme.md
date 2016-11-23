@@ -12,6 +12,17 @@ Szablon tworzy stronę tytułową pracy magisterskiej lub inżynierskiej w wers
 polskiej lub angielskiej w formatowaniu wymaganym przez dziekanat lub w wersji
 dla promotora.
 
+## Cechy pakietu
+
+__Dyplompwr__ zapewnia:
+* tworzenie strony tytułowej;
+* dopasowuje stronę tytułową do typu pracy: `magister` i `inżynier`;
+* zmienia odpowiednio logo PWr i typ pracy do wybranego języka: `polski` i
+  `english`;
+* z pomocą opcji `archiwum` i `druk` dobiera odpowiednie marginesy, interlinię
+  i skład dokumentu.
+
+
 ## Przykład użycia
 
 Szablon należy załadować w pierwszej linijce pliku .tex:
@@ -38,6 +49,8 @@ liniach pliku:
 pracy dyplomowej.}
 ```
 
+Prosty przykład użycia klasy dyplompwr [jest zaprezentowany w tym
+folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples/simple_example) 
 ## Instalacja
 
 Pakiet można zainstalować w sposób wybrany z poniższej listy:
