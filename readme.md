@@ -50,8 +50,8 @@ Pakiet można zainstalować w sposób wybrany z poniższej listy:
 ## Wymagania
 
 W celu stworzenia ładnej i zgodnej z zaleceniami strony tytułowej należy
-zainstalować dodatkowe czcionki, które domyślnie nie są dostępne w
-dystrybucjach LaTeX-a. 
+zainstalować dodatkowe fonty (URW Garamond i URW Classico), które domyślnie nie
+są dostępne w dystrybucjach LaTeXa. 
 
 Dokładna instrukcja instalacji (po angielsku) znajduje się na
 https://www.tug.org/fonts/getnonfreefonts/.

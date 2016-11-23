@@ -1,0 +1,34 @@
+%Kompiluj z lualatex
+\documentclass[magister,druk,polski]{dyplompwr}
+\usepackage{fontspec}
+\usepackage[utf8]{luainputenc}
+\usepackage{polyglossia}
+\setdefaultlanguage{polish}
+\usepackage{lipsum}
+%==================
+%   Mikrotypografia
+%==================
+%Super pakiet, który poprawia ułożenie liter i w efekcie wygląd dokumentu
+\usepackage{microtype}
+
+%Tutaj już są metadane potrzebne do szablonu dyplompwr
+\author{Imię i nazwisko autora}
+\title{Tytuł  polski}
+\titlen{English title}
+\promotor{dr hab. inż. Pan Promotor}
+\wydzial{Wydział Chemiczny}
+\miejscowosc{Wrocław}
+\kluczowe{słowa kluczowe: jedno, drugie, trzecie}
+\streszczenie{Kilka słów o pracy zwane też streszczeniem}
+\dedykacja{dedykacja}
+
+\begin{document}    %Dopiero tutaj zaczyna się zawartość dokumentu
+
+\maketitle          %Tworzenie strony tytułowej
+\tableofcontents    %Tworzenie spisu treści
+\listoffigures      %Tworzenie spisu figur
+\listoftables       %Tworzenie spisu tabel
+
+\chapter{Krótki przykład użycia pakietu dyplompwr}
+\lipsum
+\end{document}
