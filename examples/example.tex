@@ -1,0 +1,98 @@
+\documentclass[magister,archiwum,polski]{pwrdyplom}
+%\usepackage[polish]{babel}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{polish}
+\usepackage{hyperref}
+\usepackage[toc]{appendix}
+
+\usepackage{listings}
+\noappendicestocpagenum
+\usepackage{lipsum}
+\usepackage{url}
+
+\author{Imię i nazwisko autora}
+\title{Tytuł  polski}
+\titlen{English title}
+\promotor{dr hab. inż. Pan Promotor}
+\wydzial{Wydział Chemiczny}
+\miejscowosc{Wrocław}
+\kluczowe{słowa kluczowe: jedno, drugie, trzecie}
+\streszczenie{Kilka słów o pracy zwane też streszczeniem}
+\dedykacja{dedykacja}
+\begin{document}
+
+
+\maketitle
+
+\newenvironment{acknowledgements}
+    {\thispagestyle{empty}\cleardoublepage\null\vfill\begin{center}
+    \bfseries Podziękowania\end{center}}
+    {\vfill\null}
+\begin{acknowledgements}
+        Tutaj możesz umieścić podziękowania.
+\end{acknowledgements}
+        \cleardoublepage
+        
+%\input{readme}
+\tableofcontents
+\listoffigures
+\listoftables
+
+
+\chapter{README}
+
+asd
+\begin{figure}
+\includegraphics[width=.4\textwidth]{kotek}
+\caption{Ala ma kota}
+\end{figure}
+
+
+\begin{table}
+\caption{Co kto ma \cite{harel_rzecz_2008} (patrz też dodatek~\ref{Dod1})}
+\begin{tabular}{|l|l|l|}
+\hline
+Ala & ma & kota \\
+\hline
+Ola & ma & psa \\
+\hline
+Ula & ma & małpę\\
+\hline
+\end{tabular}
+\end{table}
+
+\lipsum[16-20]
+
+\begin{equation}
+\sum_{i=1}^{\infty}a_i
+\end{equation}
+
+\chapter{Listingi}
+
+\begin{lstlisting}
+int main()
+{
+   int a=2*3;
+   printf("**Ala ma kota\n**");
+   while(!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_MODE_SELECT)); /* EV5 */
+   return 0;
+}
+\end{lstlisting}
+
+
+\appendixpage
+\appendix
+\addappheadtotoc
+
+\chapter{To powinien być dodatek}\label{Dod1}
+
+\lipsum[9-11]
+
+\nocite{*}
+\bibliography{biblioex}
+\bibliographystyle{dyplom}
+
+\end{document}
