@@ -27,7 +27,7 @@ __Dyplompwr__ zapewnia:
 
 Szablon należy załadować w pierwszej linijce pliku .tex:
 ```latex
-\usepackage[magister,archiwum,polski]{dyplompwr}
+\documentclass[magister,archiwum,polski]{dyplompwr}
 ```
 Użyte powyżej parametry spowodują utworzenie strony tytułowej po polsku dla
 pracy magisterskiej oraz złożenie dokumentu przeznaczonego do druku
@@ -56,7 +56,7 @@ folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples/simple_exam
 Pakiet można zainstalować w sposób wybrany z poniższej listy:
 * umieszczenie w katalogu zawierajacym plik .tex pracy dyplomowej
 * umieszczenie w katalogu:
-    * Windows:  C:\Users\<user name>\texmf\tex\latex\local\
+    * Windows 7 i wyżej:  C:\Users\\<user name>\texmf\tex\latex\local\
     * Linux:    ~/texmf/tex/latex/local/
     * OSX:      /Users/<user name>/Library/texmf/tex/latex/local/
 
@@ -66,7 +66,7 @@ W celu stworzenia ładnej i zgodnej z zaleceniami strony tytułowej należy
 zainstalować dodatkowe fonty (URW Garamond i URW Classico), które domyślnie nie
 są dostępne w dystrybucjach LaTeXa. 
 
-Dokładna instrukcja instalacji (po angielsku) znajduje się na
+Dokładna instrukcja instalacji tych fontów (po angielsku) znajduje się na
 https://www.tug.org/fonts/getnonfreefonts/.
     
 ## Autorzy
