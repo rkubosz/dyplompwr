@@ -12,5 +12,6 @@
 !*.eps
 !*.tks
 !*.png
+!makefile
 !*.py
 *converted-to.pdf

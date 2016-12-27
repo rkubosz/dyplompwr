@@ -56,9 +56,9 @@ folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples/simple_exam
 Pakiet można zainstalować w sposób wybrany z poniższej listy:
 * umieszczenie w katalogu zawierajacym plik .tex pracy dyplomowej
 * umieszczenie w katalogu:
-    * Windows 7 i wyżej:  C:\Users\\<user name>\texmf\tex\latex\local\
+    * Windows 7 i wyżej:  C:\Users\twoja nazwa użytkownika\texmf\tex\latex\local\
     * Linux:    ~/texmf/tex/latex/local/
-    * OSX:      /Users/<user name>/Library/texmf/tex/latex/local/
+    * OSX:      /Users/twoja nazwa użytkownika/Library/texmf/tex/latex/local/
 
 ## Wymagania
 
