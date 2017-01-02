@@ -25,7 +25,7 @@ __Dyplompwr__ zapewnia:
 
 ## Przykład użycia
 
-Szablon należy załadować w pierwszej linijce pliku .tex:
+Szablon należy załadować w pierwszej linijce pliku `.tex`:
 ```latex
 \documentclass[magister,archiwum,polski]{dyplompwr}
 ```
@@ -51,10 +51,11 @@ pracy dyplomowej.}
 
 Prosty przykład użycia klasy dyplompwr [jest zaprezentowany w tym
 folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples/simple_example) 
+
 ## Instalacja
 
 Pakiet można zainstalować w sposób wybrany z poniższej listy:
-* umieszczenie w katalogu zawierajacym plik `.tex` pracy dyplomowej
+* umieszczenie folderu `dyplompwr` w katalogu zawierajacym plik `.tex` pracy dyplomowej
 * umieszczenie w katalogu:
     * Windows 7 i wyżej:  `C:\Users\twoja nazwa użytkownika\texmf\tex\latex\local\`
     * Linux:    `~/texmf/tex/latex/local/`
