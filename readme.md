@@ -53,13 +53,19 @@ Prosty przykład użycia klasy dyplompwr [jest zaprezentowany w tym
 folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples/simple_example) 
 
 ## Instalacja
+[**Dyplompwr** można pobrać bezpośrednio
+tutaj.](https://github.com/rkubosz/dyplompwr/releases/download/v1.0/dyplompwr.zip)
 
-Pakiet można zainstalować w sposób wybrany z poniższej listy:
+Pobrany pakiet można zainstalować w sposób wybrany z poniższej listy:
 * umieszczenie folderu `dyplompwr` w katalogu zawierajacym plik `.tex` pracy dyplomowej
 * umieszczenie w katalogu:
     * Windows 7 i wyżej:  `C:\Users\twoja nazwa użytkownika\texmf\tex\latex\local\`
     * Linux:    `~/texmf/tex/latex/local/`
     * OSX:      `/Users/twoja nazwa użytkownika/Library/texmf/tex/latex/local/`
+
+
+Użytkownicy Arch Linux mogą pobrać pakiet `dyplompwr` z repozytorium
+[AUR](https://aur.archlinux.org/packages/dyplompwr/).
 
 ## Wymagania
 
@@ -68,13 +74,14 @@ zainstalować dodatkowe fonty (URW Garamond i URW Classico), które domyślnie n
 są dostępne w dystrybucjach LaTeXa. 
 
 Dokładna instrukcja instalacji tych fontów (po angielsku) znajduje się na
-https://www.tug.org/fonts/getnonfreefonts/.
+https://www.tug.org/fonts/getnonfreefonts/. Użytkownicy Arch Linux korzystający
+z AUR powinni mieć te zależności automatycznie rozwiązane.
     
 ## Autorzy
 
-Pakiet stworzyłem na podstawie wcześniej stworzonych pakietów autorstwa
-[dra Andrzeja Giniewicza](https://github.com/aginiewicz/pwrmgr) oraz [dra
-Wojciecha Myszki](https://kmim.wm.pwr.edu.pl/myszka/projekty/klasa-do-skladu-pracy-dyplomowej-magisterskiej-i-inzynierskiej-na-wydziale-mechanicznym-politechniki-wroclawskiej/).
+Pakiet stworzyłem na podstawie wcześniej stworzonych pakietów autorstwa [dra
+Andrzeja Giniewicza](https://github.com/aginiewicz/pwrmgr) oraz [dra Wojciecha
+Myszki](https://kmim.wm.pwr.edu.pl/myszka/projekty/klasa-do-skladu-pracy-dyplomowej-magisterskiej-i-inzynierskiej-na-wydziale-mechanicznym-politechniki-wroclawskiej/).
 
 ## Licencja
 
