@@ -1,5 +1,8 @@
 # Szablon dyplomu PWr
 
+[For english readme click
+here](https://github.com/rkubosz/dyplompwr/blob/master/docs/manual.pdf)
+
 Ten projekt dostarcza nieoficjalny szablon pracy dyplomowej dla studentów
 Politechniki Wrocławskiej. Ten szablon jest przeznaczony do zastosowania z
 systemem składu tekstu [**LaTeX**](https://pl.wikipedia.org/wiki/LaTeX).
@@ -16,18 +19,19 @@ dla promotora.
 
 __Dyplompwr__ zapewnia:
 * tworzenie strony tytułowej;
-* dopasowuje stronę tytułową do typu pracy: `magister` i `inżynier`;
-* zmienia odpowiednio logo PWr i typ pracy do wybranego języka: `polski` i
-  `english`;
-* z pomocą opcji `archiwum` i `druk` dobiera odpowiednie marginesy, interlinię
-  i skład dokumentu.
+* dopasowuje stronę tytułową do typu pracy: `master` dla pracy magisterskiej  i
+  `engineer` dla pracy inżynierskiej;
+* zmienia odpowiednio logo PWr i typ pracy do wybranego języka: `pl` dla języka
+  polskiego i `en` dla angielskiego;
+* z pomocą opcji `archive` i `twosided` dobiera odpowiednie marginesy, interlinię
+  i skład dokumentu dla dziekanatu i promotora odpowiednio.
 
 
 ## Przykład użycia
 
 Szablon należy załadować w pierwszej linijce pliku `.tex`:
 ```latex
-\documentclass[magister,archiwum,polski]{dyplompwr}
+\documentclass[master,archive,pl]{dyplompwr}
 ```
 Użyte powyżej parametry spowodują utworzenie strony tytułowej po polsku dla
 pracy magisterskiej oraz złożenie dokumentu przeznaczonego do druku
@@ -37,15 +41,15 @@ Strona tytułowa wymaga podania takich metadanych, jak nazwisko autora, tytuł
 pracy, tytuł i nazwisko promotora etc. W tym celu należy je podać w dalszych
 liniach pliku:
 ```latex
-\documentclass[magister,druk,polski]{dyplompwr}
+\documentclass[master,twosided,pl]{dyplompwr}
 \author{imię i nazwisko autora pracy}
 \title{tytuł polski}
 \titlen{tytuł angielski}
-\promotor{tytuł, imię i nazwisko promotora}
-\wydzial{nazwa wydziału}
-\miejscowosc{Wrocław lub inna miejscowość}
-\kluczowe{słowa kluczowe}
-\streszczenie{Tutaj możesz napisać swoje krótkie streszczenie
+\supervisor{tytuł, imię i nazwisko promotora}
+\faculty{nazwa wydziału}
+\city{Wrocław lub inna miejscowość}
+\keywords{słowa kluczowe}
+\abstract{Tutaj możesz napisać swoje krótkie streszczenie
 pracy dyplomowej.}
 ```
 
