@@ -1,7 +1,7 @@
 # Szablon dyplomu PWr
 
 [For english readme click
-here](https://github.com/rkubosz/dyplompwr/blob/master/docs/manual.pdf)
+here](https://github.com/rkubosz/dyplompwr/blob/master/doc/manual.pdf)
 
 Ten projekt dostarcza nieoficjalny szablon pracy dyplomowej dla studentów
 Politechniki Wrocławskiej. Ten szablon jest przeznaczony do zastosowania z
