@@ -58,7 +58,7 @@ folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples/simple_exam
 
 ## Instalacja
 [**Dyplompwr** można pobrać bezpośrednio
-tutaj.](https://github.com/rkubosz/dyplompwr/releases/download/v1.0/dyplompwr.zip)
+tutaj.](https://github.com/rkubosz/dyplompwr/releases/download/v2.0/dyplompwr.zip)
 
 Pobrany pakiet można zainstalować w sposób wybrany z poniższej listy:
 * umieszczenie folderu `dyplompwr` w katalogu zawierajacym plik `.tex` pracy dyplomowej
