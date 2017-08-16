@@ -54,14 +54,16 @@ pracy dyplomowej.}
 ```
 
 Prosty przykład użycia klasy dyplompwr [jest zaprezentowany w tym
-folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples/simple_example) 
+folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples/simple_example)
 
 ## Instalacja
+
 [**Dyplompwr** można pobrać bezpośrednio
 tutaj.](https://github.com/rkubosz/dyplompwr/releases/download/v2.0/dyplompwr.zip)
 
-Pobrany pakiet można zainstalować w sposób wybrany z poniższej listy:
-* umieszczenie folderu `dyplompwr` w katalogu zawierajacym plik `.tex` pracy dyplomowej
+Pobrane archiwum zip należy rozpakować i otrzymany katalog `dyplompwr` zainstalować
+w sposób wybrany z poniższej listy:
+* umieszczenie w katalogu zawierajacym główny plik `*.tex` pracy dyplomowej
 * umieszczenie w katalogu:
     * Windows 7 i wyżej:  `C:\Users\twoja nazwa użytkownika\texmf\tex\latex\local\`
     * Linux:    `~/texmf/tex/latex/local/`
@@ -73,14 +75,17 @@ Użytkownicy Arch Linux mogą pobrać pakiet `dyplompwr` z repozytorium
 
 ## Wymagania
 
+Pakiet `dyplompwr` potrzebuje do poprawnego działania klasy `mwrep`, którą można
+zainstalować wraz z pakietem [`mwcls`](https://www.ctan.org/tex-archive/macros/latex/contrib/mwcls).
+
 W celu stworzenia ładnej i zgodnej z zaleceniami strony tytułowej należy
 zainstalować dodatkowe fonty (URW Garamond i URW Classico), które domyślnie nie
-są dostępne w dystrybucjach LaTeXa. 
+są dostępne w dystrybucjach LaTeXa.
 
 Dokładna instrukcja instalacji tych fontów (po angielsku) znajduje się na
 https://www.tug.org/fonts/getnonfreefonts/. Użytkownicy Arch Linux korzystający
 z AUR powinni mieć te zależności automatycznie rozwiązane.
-    
+
 ## Autorzy
 
 Pakiet stworzyłem na podstawie wcześniej stworzonych pakietów autorstwa [dra
