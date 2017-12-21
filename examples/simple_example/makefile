@@ -1,5 +1,5 @@
 TEX=latexmk
-TEXFLAGS=-lualatex
+TEXFLAGS=-pdflua
 
 .PHONY: all clean
 
