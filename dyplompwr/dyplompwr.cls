@@ -1,5 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{dyplompwr}
+
+% Inicjalizacja opcji
 \newif\if@archive
 \newif\if@oneside
 \newif\if@engineer
@@ -19,10 +21,8 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{mwrep}}
 \ProcessOptions
 
-%%		Opcje dla oneside
+% Wczytywanie klasy bazowej -- mwrep -- wraz z odpowiednią interlinią i marginesami
 \if@archive
-% Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt i openany
-% oraz doublesided
 	\LoadClass[12pt,openany,twoside]{mwrep}
 	\RequirePackage[a4paper,outer=2cm,inner=3.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 % Interlinia jest ustawiana na 1
@@ -30,7 +30,6 @@
 \fi
 
 \if@oneside
-%	Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt
 	\LoadClass[12pt]{mwrep}
 	\RequirePackage[a4paper,top=2.5cm,left=3.5cm,right=2.5cm,bottom=2.5cm]{geometry}
 % Zmieniamy interlinię na 1.5 dla poprawienia przejrzystości
@@ -85,9 +84,13 @@
 
 \renewcommand\maketitle{
 	\begin{titlepage}
+		% marginesy strony tytułowej
 		\newgeometry{left=62.5mm,right=25mm,top=25mm,bottom=25mm}
 		\pagenumbering{alph}
 		\noindent\unitlength1mm
+
+		% tutaj się zaczyna rozmiejscawianie elementów strony tytułowej. Zaczynamy
+		% od loga PWr i nazwy wydziału
 		\begin{picture}(0,0)
 			\put(0,-25){\includegraphics[width=122mm]{\logo}}
 			\if@pl
@@ -132,7 +135,6 @@
 		\mbox{}
 		\cleardoublepage
 	\end{titlepage}
-
 
 	\restoregeometry
 	\setcounter{footnote}{0}
