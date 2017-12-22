@@ -23,7 +23,7 @@ __Dyplompwr__ zapewnia:
   `engineer` dla pracy inżynierskiej;
 * zmienia odpowiednio logo PWr i typ pracy do wybranego języka: `pl` dla języka
   polskiego i `en` dla angielskiego;
-* z pomocą opcji `archive` i `twosided` dobiera odpowiednie marginesy, interlinię
+* z pomocą opcji `archive` i `oneside` dobiera odpowiednie marginesy, interlinię
   i skład dokumentu dla dziekanatu i promotora odpowiednio.
 
 
@@ -41,7 +41,7 @@ Strona tytułowa wymaga podania takich metadanych, jak nazwisko autora, tytuł
 pracy, tytuł i nazwisko promotora etc. W tym celu należy je podać w dalszych
 liniach pliku:
 ```latex
-\documentclass[master,twosided,pl]{dyplompwr}
+\documentclass[master,oneside,pl]{dyplompwr}
 \author{imię i nazwisko autora pracy}
 \title{tytuł polski}
 \titlen{tytuł angielski}

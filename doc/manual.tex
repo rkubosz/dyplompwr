@@ -12,7 +12,7 @@
 \title{dyplompwr}
 \begin{document}
 \maketitle
-\section{Summary of package} 
+\section{Summary of package}
 \label{sec:wstep}
 \par This package delivers a~template of thesis for students of Wrocław
 University of Technology. This package is based on other thesis templates
@@ -46,21 +46,21 @@ Package can be installed manually in home directory:
     $HOME/texmf/tex/latex
 \end{verbatim}
 or just copy package files into thesis directory.
-    
+
 Users of Arch Linux can install the package from
-AUR\footnote{\url{https://aur.archlinux.org/packages/dyplompwr/}}. 
+AUR\footnote{\url{https://aur.archlinux.org/packages/dyplompwr/}}.
 
 \section{Usage}
 \par Packet should be loaded in first line of~.tex file:
 \begin{verbatim}
 \documentclass[package options]{dyplompwr}
-\end{verbatim} 
+\end{verbatim}
 where \verb|package options| can be replaced with student's preferences:
 \begin{itemize}
     \item thesis type: \verb|master| lub \verb|engineer| will generate
         headers for master's or engineer's thesis accordingly;
     \item formatting: \verb|archive| generates version for archive,
-        \verb|twosided| generates version for supervisor (for more info see
+        \verb|oneside| generates version for supervisor (for more info see
         \cref{sec:wstep});
     \item thesis language: \verb|pl| for polish thesis, \verb|en| for english thesis.
 \end{itemize}
@@ -71,15 +71,15 @@ These options can be also provided by hand:
 \end{verbatim}.
 To get an english engineer's thesis for supervisor first line of~.tex file
 should be like below:
-\begin{verbatim} 
-    \documentclass[engineer,twosided,en]{dyplompwr}
+\begin{verbatim}
+    \documentclass[engineer,oneside,en]{dyplompwr}
 \end{verbatim}.
-\subsection{Metadata} 
+\subsection{Metadata}
 Title page of thesis contains data such as polish and english title, author's
 name, supervisor's name, faculty, keywords and abstract. To provide it there
 should be filled metadata in document preamble as in example below:
-\begin{verbatim} 
-    \documentclass[master,twosided,pl]{dyplompwr}
+\begin{verbatim}
+    \documentclass[master,oneside,pl]{dyplompwr}
     \author{author's name}
     \title{polish title of thesis}
     \titlen{english title of thesis}

@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{dyplompwr}
 \newif\if@archive
-\newif\if@twosided
+\newif\if@oneside
 \newif\if@engineer
 \newif\if@master
 \newif\if@eng
@@ -10,8 +10,8 @@
 \@mastertrue
 \@archivetrue
 \@pltrue
-\DeclareOption{archive}{\@archivetrue\@twosidedfalse}
-\DeclareOption{twosided}{\@twosidedtrue\@archivefalse}
+\DeclareOption{archive}{\@archivetrue\@onesidefalse}
+\DeclareOption{oneside}{\@onesidetrue\@archivefalse}
 \DeclareOption{engineer}{\@engineertrue\@masterfalse}
 \DeclareOption{master}{\@mastertrue\@engineerfalse}
 \DeclareOption{en}{\@engtrue\@plfalse}
@@ -19,7 +19,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{mwrep}}
 \ProcessOptions
 
-%%		Opcje dla twosided
+%%		Opcje dla oneside
 \if@archive
 % Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt i openany
 % oraz doublesided
@@ -29,7 +29,7 @@
 	\RequirePackage[singlespacing]{setspace}
 \fi
 
-\if@twosided
+\if@oneside
 %	Ładujemy klasę bazową, do opcji podanych w dokumencie dodajemy 12pt
 	\LoadClass[12pt]{mwrep}
 	\RequirePackage[a4paper,top=2.5cm,left=3.5cm,right=2.5cm,bottom=2.5cm]{geometry}
@@ -101,12 +101,14 @@
 				\fontsize{14pt}{16pt}\usefont{T1}{uop}{m}{n}{\@faculty}}}
 			\fi
 
+			% ramka wokół tytułu pracy, autora i promotora
 			\definecolor{lightgray}{rgb}{.74 .74 .74}
 			\textcolor{lightgray}{
 				\put(0,-166){\rule{118mm}{4mm}}\put(0,-166){\rule{4mm}{80mm}}
 				\put(0,-90){\rule{118mm}{4mm}}\put(118,-166){\rule{4mm}{80mm}}
 			}
 
+			% umiejscowienie tekstów, jak nagłówek, tytuł, nazwiska autora i promotora itd.
 			\put(61,-75){\makebox(0,0)[cb]{ \fontsize{32pt}{34pt} \usefont{T1}{ugm}{m}{n}{\thesisheader}}}
 
 			\put(61,-95){\makebox(0,0)[t]{\parbox{115mm}{
