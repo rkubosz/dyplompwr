@@ -8,7 +8,7 @@ Politechniki Wrocławskiej. Ten szablon jest przeznaczony do zastosowania z
 systemem składu tekstu [**LaTeX**](https://pl.wikipedia.org/wiki/LaTeX).
 
 Szablon jest kompatybilny z [wymaganiami Wydziału
-Chemicznego](http://www.wch.pwr.edu.pl/druki_dyplomanci,11.dhtml) odnośnie
+Chemicznego](http://wch.pwr.edu.pl/fcp/6GBUKOQtTKlQhbx08SlkTUAJQX2o8DAoHNiwFE1xVSXtVFVZpCFghUHcKVigEQUw/36/public/druki/duplomanci/ii_stopnia/21.doc) odnośnie
 formatowania i strony tytułowej.
 
 Szablon tworzy stronę tytułową pracy magisterskiej lub inżynierskiej w wersji
