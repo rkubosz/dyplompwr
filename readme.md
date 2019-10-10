@@ -70,7 +70,7 @@ w sposób wybrany z poniższej listy:
     * OSX:      `/Users/twoja nazwa użytkownika/Library/texmf/tex/latex/local/`
 
 
-Użytkownicy Arch Linux mogą pobrać pakiet `dyplompwr` z repozytorium
+Użytkownicy Arch Linux mogą zaintalować pakiet `dyplompwr` z repozytorium
 [AUR](https://aur.archlinux.org/packages/dyplompwr/).
 
 ## Wymagania
