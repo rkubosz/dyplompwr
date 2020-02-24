@@ -37,12 +37,11 @@
 \fi
 
 %%		Wymagane pakiety
-\RequirePackage{array,graphicx}
+\RequirePackage{graphicx}
 \RequirePackage[ddmmyyyy]{datetime}
 % standardowy font, ładowany dla pewności
 \RequirePackage{lmodern}
 % to na potrzeby strony tytułowej
-\RequirePackage[absolute]{textpos}
 \RequirePackage{xcolor}
 \def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
 
@@ -94,14 +93,14 @@
 		\begin{picture}(0,0)
 			\put(0,-25){\includegraphics[width=122mm]{\logo}}
 			\if@pl
-				\put(60,-30){
+				\put(56,-28){
 					\makebox(0,0)[cb]{
 				\fontsize{16pt}{18pt}\usefont{T1}{uop}{m}{n}{\@faculty}}}
 			\fi
 			\if@eng
-				\put(50,-30){
+				\put(54,-33){
 					\makebox(0,0)[cb]{
-				\fontsize{14pt}{16pt}\usefont{T1}{uop}{m}{n}{\@faculty}}}
+				\fontsize{16pt}{18pt}\usefont{T1}{uop}{m}{n}{\@faculty}}}
 			\fi
 
 			% ramka wokół tytułu pracy, autora i promotora
@@ -131,7 +130,7 @@
 
 		\let\footnotesize\small
 		\let\footnoterule\relax
-		\let \footnote \thanks
+		\let\footnote\thanks
 		\mbox{}
 		\cleardoublepage
 	\end{titlepage}
