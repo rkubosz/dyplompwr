@@ -59,7 +59,7 @@ folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples)
 ## Instalacja
 
 [**Dyplompwr** można pobrać bezpośrednio
-tutaj.](https://github.com/rkubosz/dyplompwr/releases/download/v2.0/dyplompwr.zip)
+tutaj.](https://github.com/rkubosz/dyplompwr/releases/latest)
 
 Pobrane archiwum zip należy rozpakować i otrzymany katalog `dyplompwr` zainstalować
 w sposób wybrany z poniższej listy:
