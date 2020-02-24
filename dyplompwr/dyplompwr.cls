@@ -94,12 +94,12 @@
 		\begin{picture}(0,0)
 			\put(0,-25){\includegraphics[width=122mm]{\logo}}
 			\if@pl
-				\put(60,-30){
+				\put(56,-28){
 					\makebox(0,0)[cb]{
 				\fontsize{16pt}{18pt}\usefont{T1}{uop}{m}{n}{\@faculty}}}
 			\fi
 			\if@eng
-				\put(50,-30){
+				\put(51,-32){
 					\makebox(0,0)[cb]{
 				\fontsize{14pt}{16pt}\usefont{T1}{uop}{m}{n}{\@faculty}}}
 			\fi
