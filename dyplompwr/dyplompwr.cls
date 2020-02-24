@@ -37,12 +37,11 @@
 \fi
 
 %%		Wymagane pakiety
-\RequirePackage{array,graphicx}
+\RequirePackage{graphicx}
 \RequirePackage[ddmmyyyy]{datetime}
 % standardowy font, ładowany dla pewności
 \RequirePackage{lmodern}
 % to na potrzeby strony tytułowej
-\RequirePackage[absolute]{textpos}
 \RequirePackage{xcolor}
 \def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
 
@@ -131,7 +130,7 @@
 
 		\let\footnotesize\small
 		\let\footnoterule\relax
-		\let \footnote \thanks
+		\let\footnote\thanks
 		\mbox{}
 		\cleardoublepage
 	\end{titlepage}
