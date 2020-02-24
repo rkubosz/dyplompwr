@@ -53,8 +53,8 @@ liniach pliku:
 pracy dyplomowej.}
 ```
 
-Prosty przykład użycia klasy dyplompwr [jest zaprezentowany w tym
-folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples/simple_example)
+Proste przykłady użycia klasy dyplompwr [jest zaprezentowany w tym
+folderze.](https://github.com/rkubosz/dyplompwr/tree/master/examples)
 
 ## Instalacja
 
