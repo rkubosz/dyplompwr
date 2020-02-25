@@ -3,9 +3,9 @@ TEXFLAGS=-pdflua
 
 .PHONY: all clean
 
-all: pl.pdf
+all: main.pdf
 
-pl.pdf: pl.tex
+main.pdf: main.tex
 	$(TEX) $(TEXFLAGS) $<
 
 clean:
