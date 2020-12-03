@@ -52,7 +52,7 @@
 		\def\thesisheader{PRACA DYPLOMOWA}
 	\fi
 	\if@engineer
-		\def\thesisheader{PRACA INŻYNIERSKA}
+		\def\thesisheader{PRACA IN\.{Z}YNIERSKA}
 	\fi
 	\def\logo{logopwr/pl.pdf}
 \fi
