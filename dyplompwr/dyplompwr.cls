@@ -95,12 +95,12 @@
 			\if@pl
 				\put(56,-28){
 					\makebox(0,0)[cb]{
-				\fontsize{16pt}{18pt}\usefont{T1}{uop}{m}{n}{\@faculty}}}
+				\fontsize{16pt}{18pt}\usefont{T1}{URWClassico-TLF}{m}{n}{\@faculty}}}
 			\fi
 			\if@eng
 				\put(54,-33){
 					\makebox(0,0)[cb]{
-				\fontsize{16pt}{18pt}\usefont{T1}{uop}{m}{n}{\@faculty}}}
+				\fontsize{16pt}{18pt}\usefont{T1}{URWClassico-TLF}{m}{n}{\@faculty}}}
 			\fi
 
 			% ramka wokół tytułu pracy, autora i promotora
